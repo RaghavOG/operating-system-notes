@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 import { getDocByPath, getAllDocPaths, getAllDocs } from '@/lib/docs';
-import { MDXContent } from '@/components/MDXContent';
 import { DocPageClient } from '@/components/DocPageClient';
 import type { Metadata } from 'next';
 
