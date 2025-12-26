@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import highlight.js theme - using a dark theme */
+/* Note: You may need to install highlight.js theme separately or use a CDN */
+/* For now, we'll use inline styles in the prose classes */
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgb(209 213 219);
+  border-radius: 3px;
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgb(55 65 81);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(156 163 175);
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(75 85 99);
+}
+
+/* Better selection */
+::selection {
+  background-color: rgba(59, 130, 246, 0.3);
+}
+
+.dark ::selection {
+  background-color: rgba(59, 130, 246, 0.4);
+}
+
+/* Typography plugin dark mode overrides */
+.prose {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply text-gray-900 dark:text-gray-100 font-semibold;
+}
+
+.prose h1 {
+  @apply text-4xl mb-6 mt-8;
+}
+
+.prose h2 {
+  @apply text-3xl mb-4 mt-8 border-b border-gray-300 dark:border-gray-800 pb-2;
+}
+
+.prose h3 {
+  @apply text-2xl mb-3 mt-6;
+}
+
+.prose h4 {
+  @apply text-xl mb-2 mt-4;
+}
+
+.prose a {
+  @apply text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 no-underline;
+}
+
+.prose code {
+  @apply text-pink-600 dark:text-pink-400 bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.prose pre {
+  @apply bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-800 rounded-lg p-4 overflow-x-auto;
+}
+
+.prose pre code {
+  @apply text-gray-800 dark:text-gray-200 bg-transparent p-0;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 pl-4 italic;
+}
+
+.prose table {
+  @apply border-gray-300 dark:border-gray-700 w-full my-4;
+}
+
+.prose th,
+.prose td {
+  @apply border border-gray-300 dark:border-gray-700 px-4 py-2;
+}
+
+.prose thead {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+.prose ul,
+.prose ol {
+  @apply my-4 pl-6;
+}
+
+.prose li {
+  @apply my-2;
+}
+
+.prose p {
+  @apply my-4 leading-7;
+}
+
+.prose img {
+  @apply rounded-lg my-6;
+}
+
+/* Custom anchor links */
+.prose .anchor {
+  @apply text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-400;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-weight: normal;
+}
+
+.prose h1:hover .anchor,
+.prose h2:hover .anchor,
+.prose h3:hover .anchor,
+.prose h4:hover .anchor,
+.prose h5:hover .anchor,
+.prose h6:hover .anchor {
+  opacity: 1;
+}
+
+/* Ensure headings are always visible */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: inherit !important;
+}
+
+/* Fix for any anchor tags inside headings */
+.prose h1 > a,
+.prose h2 > a,
+.prose h3 > a,
+.prose h4 > a,
+.prose h5 > a,
+.prose h6 > a {
+  color: inherit !important;
+  text-decoration: none !important;
+  display: inline;
+}
+
+.prose h1 > a:hover,
+.prose h2 > a:hover,
+.prose h3 > a:hover,
+.prose h4 > a:hover,
+.prose h5 > a:hover,
+.prose h6 > a:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Code highlight theme */
+.hljs {
+  @apply bg-gray-900 text-gray-100;
+}
+
+/* Custom code block styling */
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #6a737d;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type {
+  color: #ff79c6;
+}
+
+.hljs-string,
+.hljs-literal {
+  color: #50fa7b;
+}
+
+.hljs-number {
+  color: #bd93f9;
+}
+
+.hljs-function,
+.hljs-title {
+  color: #8be9fd;
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  color: #ffb86c;
+}
+
+.hljs-attr {
+  color: #50fa7b;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #ff79c6;
+}
+
