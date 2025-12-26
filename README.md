@@ -128,6 +128,8 @@ Edit `app/globals.css` to customize colors and styling.
 
 The easiest way to deploy is using [Vercel](https://vercel.com):
 
+#### Option 1: Direct Vercel Integration (Recommended)
+
 1. Push your code to GitHub
 2. Import the repository in [Vercel](https://vercel.com)
 3. Vercel will auto-detect Next.js and deploy
@@ -135,6 +137,19 @@ The easiest way to deploy is using [Vercel](https://vercel.com):
    - `NEXT_PUBLIC_SITE_URL` (optional, defaults to vercel.app URL)
 
 The site will be live at `https://your-project.vercel.app`
+
+#### Option 2: GitHub Actions Deployment
+
+If you prefer using GitHub Actions for deployment:
+
+1. Add the following secrets to your GitHub repository (Settings → Secrets → Actions):
+   - `VERCEL_TOKEN`: Get from https://vercel.com/account/tokens
+   - `VERCEL_ORG_ID`: Get from Vercel dashboard → Settings → General
+   - `VERCEL_PROJECT_ID`: Get from Vercel dashboard → Project Settings → General
+
+2. Push to `main` or `master` branch to trigger automatic deployment
+
+See [.github/workflows/README.md](.github/workflows/README.md) for more details.
 
 ### Build for Production
 
