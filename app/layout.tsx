@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: seoConfig.titleTemplate,
   },
   description: seoConfig.defaultDescription,
-  keywords: seoConfig.keywords,
+  keywords: [...seoConfig.keywords],
   authors: [{ name: siteConfig.author.name, url: siteConfig.author.url }],
   creator: siteConfig.author.name,
   publisher: siteConfig.author.name,
