@@ -8,7 +8,7 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 import { TableOfContents } from '@/components/TableOfContents';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { MobileTOC } from '@/components/MobileTOC';
-import type { Doc } from '@/lib/docs';
+import type { Doc } from '@/lib/types';
 
 interface DocPageClientProps {
   doc: Doc;

@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
-import type { Doc } from '@/lib/docs';
+import type { Doc } from '@/lib/types';
 
 interface SearchBarProps {
   docs: Doc[];

@@ -5,7 +5,6 @@
 const requiredEnvVars = [] as const;
 const optionalEnvVars = ['NEXT_PUBLIC_SITE_URL'] as const;
 
-type RequiredEnvVar = typeof requiredEnvVars[number];
 type OptionalEnvVar = typeof optionalEnvVars[number];
 
 /**

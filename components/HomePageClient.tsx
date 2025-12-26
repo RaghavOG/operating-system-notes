@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Sidebar } from '@/components/Sidebar';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { SearchBar } from '@/components/SearchBar';
-import type { Doc } from '@/lib/docs';
+import type { Doc } from '@/lib/types';
 
 interface HomePageClientProps {
   docs: Doc[];
